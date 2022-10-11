@@ -1,0 +1,2 @@
+,epoch,theta,learning_rate,train_loss,train_accuracy(%),top_5_accuracy(%),test_accuracy(%),top_5_test_accuracy(%),ranks,# effective parameters,cr_test (%),# effective parameters train,cr_train (%),# effective parameters train with grads,cr_train_grads (%)
+0,0,0.1,0.05,1.911,25.296,81.9214,23.4873,83.3798,"[8, 8, 8, 8, 8, 8, 16, 15, 16, 16, 16, 15, 27, 30, 28, 30, 29, 27, 31, 26]",20498,92.6,646448,-133.8,826136,-49.4

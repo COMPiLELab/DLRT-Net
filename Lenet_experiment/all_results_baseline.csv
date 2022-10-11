@@ -1,0 +1,6 @@
+,epoch,cr layerwise,cross val,learning_rate,train_loss,train_accuracy(%),top_5_accuracy(%),test_accuracy(%),top_5_test_accuracy(%),ranks,# effective parameters,cr_test (%),# effective parameters train,cr_train (%),# effective parameters train with grads,cr_train_grads (%)
+9,9,Baseline,0,0.05,0.028,99.1233,99.9933,98.7936,99.9803,[],430500,0.0,430500,0.0,861000,0.0
+7,7,Baseline,4,0.05,0.037,98.8817,99.9867,98.8925,100.0001,[],430500,0.0,430500,0.0,861000,0.0
+9,9,Baseline,3,0.05,0.03,99.0533,99.99,98.8826,100.0001,[],430500,0.0,430500,0.0,861000,0.0
+7,7,Baseline,1,0.05,0.035,98.8783,99.9883,98.7738,99.9902,[],430500,0.0,430500,0.0,861000,0.0
+9,9,Baseline,2,0.05,0.029,99.0783,99.995,98.754,99.9902,[],430500,0.0,430500,0.0,861000,0.0

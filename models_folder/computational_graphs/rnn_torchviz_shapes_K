@@ -1,0 +1,238 @@
+digraph {
+	graph [size="15.45,15.45"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	139772123765312 [label="
+ (1, 10)" fillcolor=darkolivegreen1]
+	139772123787328 [label="AddmmBackward0
+----------------------------
+alpha       :              1
+beta        :              1
+mat1        : [saved tensor]
+mat1_sizes  :       (1, 500)
+mat1_strides:       (500, 1)
+mat2        : [saved tensor]
+mat2_sizes  :      (500, 10)
+mat2_strides:       (1, 500)"]
+	139772123787856 -> 139772123787328
+	139771686229072 [label="layer.9.bias
+ (10)" fillcolor=lightblue]
+	139771686229072 -> 139772123787856
+	139772123787856 [label=AccumulateGrad]
+	139772123791312 -> 139772123787328
+	139772123791312 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	139772123789872 -> 139772123791312
+	139772123789872 [label="AddBackward0
+------------
+alpha: 1"]
+	139772123787904 -> 139772123789872
+	139772123787904 [label="MmBackward0
+----------------------------
+mat2        : [saved tensor]
+mat2_sizes  :     (250, 500)
+mat2_strides:       (1, 250)
+self        : [saved tensor]
+self_sizes  :       (1, 250)
+self_strides:       (250, 1)"]
+	139772123789344 -> 139772123787904
+	139772123789344 [label="MmBackward0
+----------------------------
+mat2        : [saved tensor]
+mat2_sizes  :     (800, 250)
+mat2_strides:             ()
+self        :           None
+self_sizes  :       (1, 800)
+self_strides:       (800, 1)"]
+	139772123789632 -> 139772123789344
+	139772123789632 [label="UnsafeViewBackward0
+-------------------------
+self_sizes: (1, 50, 4, 4)"]
+	139772123788720 -> 139772123789632
+	139772123788720 [label=CloneBackward0]
+	139772123790736 -> 139772123788720
+	139772123790736 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	139772123789248 -> 139772123790736
+	139772123789248 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	139772123790640 -> 139772123789248
+	139772123790640 [label="ViewBackward0
+-----------------------
+self_sizes: (1, 50, 64)"]
+	139772123790976 -> 139772123790640
+	139772123790976 [label="TransposeBackward0
+------------------
+dim0: 1
+dim1: 2"]
+	139772123790256 -> 139772123790976
+	139772123790256 [label="AddBackward0
+------------
+alpha: 1"]
+	139772123788288 -> 139772123790256
+	139772123788288 [label="UnsafeViewBackward0
+--------------------
+self_sizes: (64, 50)"]
+	139772123788480 -> 139772123788288
+	139772123788480 [label="MmBackward0
+----------------------------
+mat2        : [saved tensor]
+mat2_sizes  :       (25, 50)
+mat2_strides:        (1, 25)
+self        : [saved tensor]
+self_sizes  :       (64, 25)
+self_strides:        (25, 1)"]
+	139772123791264 -> 139772123788480
+	139772123791264 [label="ReshapeAliasBackward0
+-----------------------
+self_sizes: (1, 64, 25)"]
+	139772123791072 -> 139772123791264
+	139772123791072 [label="UnsafeViewBackward0
+-----------------------
+self_sizes: (1, 64, 25)"]
+	139772123790016 -> 139772123791072
+	139772123790016 [label="BmmBackward0
+--------------------
+mat2: [saved tensor]
+self:           None"]
+	139772123788912 -> 139772123790016
+	139772123788912 [label="ReshapeAliasBackward0
+------------------------
+self_sizes: (1, 64, 500)"]
+	139772123790304 -> 139772123788912
+	139772123790304 [label="ExpandBackward0
+------------------------
+self_sizes: (1, 64, 500)"]
+	139772123791168 -> 139772123790304
+	139772123791168 [label="TransposeBackward0
+------------------
+dim0: 1
+dim1: 2"]
+	139772123790688 -> 139772123791168
+	139772123790688 [label="Im2ColBackward0
+----------------------
+dilation      : (1, 1)
+kernel_size   : (5, 5)
+padding       : (0, 0)
+self_argsize_2:     12
+self_argsize_3:     12
+stride        : (1, 1)"]
+	139772123787376 -> 139772123790688
+	139772123787376 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	139772123789152 -> 139772123787376
+	139772123789152 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	139772123790928 -> 139772123789152
+	139772123790928 [label="ViewBackward0
+------------------------
+self_sizes: (1, 20, 576)"]
+	139772123790496 -> 139772123790928
+	139772123790496 [label="TransposeBackward0
+------------------
+dim0: 1
+dim1: 2"]
+	139772123789776 -> 139772123790496
+	139772123789776 [label="AddBackward0
+------------
+alpha: 1"]
+	139772123791024 -> 139772123789776
+	139772123791024 [label="UnsafeViewBackward0
+---------------------
+self_sizes: (576, 20)"]
+	139772123788672 -> 139772123791024
+	139772123788672 [label="MmBackward0
+----------------------------
+mat2        :           None
+mat2_sizes  :       (10, 20)
+mat2_strides:        (1, 10)
+self        : [saved tensor]
+self_sizes  :      (576, 10)
+self_strides:             ()"]
+	139772123788336 -> 139772123788672
+	139772123788336 [label=TBackward0]
+	139772123789584 -> 139772123788336
+	139772123789584 [label="SliceBackward0
+-------------------------------
+dim       :                   0
+end       : 9223372036854775807
+self_sizes:            (20, 10)
+start     :                   0
+step      :                   1"]
+	139772123791216 -> 139772123789584
+	139772123425104 [label="layer.0.K
+ (20, 10)" fillcolor=lightblue]
+	139772123425104 -> 139772123791216
+	139772123791216 [label=AccumulateGrad]
+	139772123787616 -> 139772123789776
+	139772123424864 [label="layer.0.bias
+ (20)" fillcolor=lightblue]
+	139772123424864 -> 139772123787616
+	139772123787616 [label=AccumulateGrad]
+	139772123790112 -> 139772123788480
+	139772123790112 [label=TBackward0]
+	139772123787568 -> 139772123790112
+	139772123787568 [label="SliceBackward0
+-------------------------------
+dim       :                   0
+end       : 9223372036854775807
+self_sizes:            (50, 25)
+start     :                   0
+step      :                   1"]
+	139772123789296 -> 139772123787568
+	139771686229552 [label="layer.3.K
+ (50, 25)" fillcolor=lightblue]
+	139771686229552 -> 139772123789296
+	139772123789296 [label=AccumulateGrad]
+	139772123790448 -> 139772123790256
+	139772123423264 [label="layer.3.bias
+ (50)" fillcolor=lightblue]
+	139772123423264 -> 139772123790448
+	139772123790448 [label=AccumulateGrad]
+	139772123788048 -> 139772123787904
+	139772123788048 [label="PermuteBackward0
+----------------
+dims: (1, 0)"]
+	139772123789008 -> 139772123788048
+	139772123789008 [label="SliceBackward0
+-------------------------------
+dim       :                   0
+end       : 9223372036854775807
+self_sizes:          (500, 250)
+start     :                   0
+step      :                   1"]
+	139772123788768 -> 139772123789008
+	139772123755520 [label="layer.7.K
+ (500, 250)" fillcolor=lightblue]
+	139772123755520 -> 139772123788768
+	139772123788768 [label=AccumulateGrad]
+	139772123788240 -> 139772123789872
+	139772123424384 [label="layer.7.bias
+ (500)" fillcolor=lightblue]
+	139772123424384 -> 139772123788240
+	139772123788240 [label=AccumulateGrad]
+	139772123789968 -> 139772123787328
+	139772123789968 [label=TBackward0]
+	139772123788624 -> 139772123789968
+	139771686229632 [label="layer.9.weight
+ (10, 500)" fillcolor=lightblue]
+	139771686229632 -> 139772123788624
+	139772123788624 [label=AccumulateGrad]
+	139772123787328 -> 139772123765312
+}
