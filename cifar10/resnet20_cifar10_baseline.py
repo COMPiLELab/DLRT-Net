@@ -77,4 +77,3 @@ validation_loader = data.DataLoader(testset, batch_size=args.batch_size, shuffle
 train_baseline(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
                     train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,
                     net_name = args.net_name,save_weights=args.save_weights)
-
