@@ -3,7 +3,7 @@ import os
 import sys
 import argparse
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-from models_folder.models.vgg_baseline import VGG,VGG_types
+from models_folder.vgg_baseline import VGG,VGG_types
 import torch
 from optimizer_KLS.dlrt_optimizer import dlr_opt
 from optimizer_KLS.train_custom_optimizer import *
@@ -47,8 +47,8 @@ NN = VGG(num_classes = num_classes,
 
 
 ############################################## optimizer creation
-optimizer = dlr_opt(NN, tau=args.lr, theta=args.theta,KLS_optim = torch.optim.SGD,momentum = args.momentum)
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer.integrator)
+optimizer = torch.optim.SGD(NN.parameters(),lr = args.lr,momentum = args.momentum)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer)
 path = './results/vgg/'
 ############################################## 
 
@@ -98,5 +98,6 @@ validation_loader = torch.utils.data.DataLoader(validation_dataset, batch_size=a
                                             shuffle=True, num_workers=args.workers, pin_memory=True,
                                             sampler=None)
 
-train_and_finetune(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
-                    train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,net_name = args.net_name)
+train_baseline(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
+                    train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,
+                    net_name = args.net_name,save_weights=args.save_weights)

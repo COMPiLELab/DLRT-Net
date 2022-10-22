@@ -48,8 +48,8 @@ NN = VGG(
 ).to(device)
 
 
-optimizer = dlr_opt(NN, tau=args.lr, theta = args.theta,KLS_optim = torch.optim.SGD,momentum = args.momentum)
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer.integrator)
+optimizer = torch.optim.SGD(NN.parameters(),lr = args.lr,momentum = args.momentum)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer)
 path = './results/vgg/'
 
 ########## import 
@@ -81,6 +81,6 @@ testset = dataloader(root='./data', train=False, download=False, transform=trans
 validation_loader = data.DataLoader(testset, batch_size=args.batch_size, shuffle=False, num_workers=args.workers)
 
 
-train_and_finetune(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
+train_baseline(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
                     train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,
                     net_name = args.net_name,save_weights=args.save_weights)

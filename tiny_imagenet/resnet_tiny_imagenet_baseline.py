@@ -40,8 +40,8 @@ criterion = torch.nn.CrossEntropyLoss()
 NN = ResNet50(num_classes = num_classes,channels = 3,device = device).to(device)
 
 
-optimizer = dlr_opt(NN, tau=args.lr, theta=args.theta,KLS_optim = torch.optim.SGD,momentum = args.momentum)
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer.integrator)
+optimizer = torch.optim.SGD(NN.parameters(),lr = args.lr,momentum = args.momentum)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer)
 path = './results/resnet/'
 
 
@@ -103,5 +103,6 @@ validation_loader = torch.utils.data.DataLoader(validation_dataset, batch_size=a
 #                                                 shuffle=True, num_workers=workers, pin_memory=True,
 #                                                 sampler=None) 
 
-train_and_finetune(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
-                    train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,net_name = args.net_name) 
+train_baseline(NN = NN,epochs = args.epochs,criterion = criterion,optimizer = optimizer,scheduler = scheduler,
+                    train_loader=train_loader,validation_loader=validation_loader,path = path,device = device,
+                    net_name = args.net_name,save_weights=args.save_weights)
