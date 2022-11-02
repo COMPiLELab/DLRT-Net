@@ -14,6 +14,7 @@
 
 ### Useful links
 
-The Tensorflow implementation can be found at https://github.com/CSMMLab/DLRANet
+1. The Tensorflow implementation can be found at https://github.com/CSMMLab/DLRANet
+2. DLRT paper can be found at https://arxiv.org/abs/2205.13571v2
 
 
