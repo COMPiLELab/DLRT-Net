@@ -1,6 +1,13 @@
-# pytorch_dlr
 
-## Pytorch implementation of dynamical low-rank training (DLRT)
+# Pytorch implementation of dynamical low-rank training (DLRT) algorithm 
+
+### Reference paper
+```
+Low-rank lottery tickets: finding efficient low-rank neural networks via matrix differential equations
+Steffen Schotthöfer, Emanuele Zangrando, Jonas Kusch, Gianluca Ceruti, Francesco Tudisco   
+NeurIPS 2022
+```
+[Neurips paper](https://papers.nips.cc/paper_files/paper/2022/hash/7e98b00eeafcdaeb0c5661fb9355be3a-Abstract-Conference.html)
 
 ### Installation
 
@@ -15,6 +22,6 @@
 ### Useful links
 
 1. The Tensorflow implementation can be found at https://github.com/CSMMLab/DLRANet
-2. DLRT paper can be found at https://arxiv.org/abs/2205.13571v2
+2. The NeurIPS paper can be found [here](https://papers.nips.cc/paper_files/paper/2022/file/7e98b00eeafcdaeb0c5661fb9355be3a-Paper-Conference.pdf)
 
 
